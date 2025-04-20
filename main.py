@@ -22,6 +22,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "Confession API is live 🎉"}
+
+
 def confession_serializer(c):
     return {
         "id": str(c["_id"]),
